@@ -60,8 +60,8 @@ function render(data) {
   document.querySelector("#release-status").textContent = readinessLabels[data.release_readiness.overall_status] ?? data.release_readiness.overall_status;
   document.querySelector("#release-score").textContent = String(data.release_readiness.release_readiness_score);
   document.querySelector("#summary-grid").innerHTML = [
-    metric("페이퍼 누적수익률", `${data.validation.paper_total_return_pct.toFixed(2)}%`),
-    metric("긍정 결과 비율", `${data.validation.win_rate_pct.toFixed(2)}%`),
+    metric("페이퍼 누적 시나리오 결과", `${data.validation.paper_total_return_pct.toFixed(2)}%`),
+    metric("시뮬레이션 방향 일치", `${data.validation.positive_outcome_rate_pct.toFixed(2)}%`),
     metric("최대 낙폭", `${data.validation.max_drawdown.toFixed(2)}`, "negative"),
     metric("표본 등급", sampleGradeLabels[data.validation.sample_grade] ?? data.validation.sample_grade, "watch"),
     metric("점수 보정", calibrationLabels[data.validation.calibration_readiness] ?? data.validation.calibration_readiness, "watch"),
@@ -79,6 +79,7 @@ function render(data) {
         <div><span>모의 노출</span><strong>${candidate.mock_allocation_pct.toFixed(2)}%</strong></div>
         <div><span>모의 위험예산</span><strong>${candidate.mock_risk_budget_pct.toFixed(2)}%</strong></div>
       </div>
+      <p class="muted">AI는 이 시나리오를 요약하고 위험과 가정을 설명합니다. 결과는 가정 기반입니다.</p>
       <p class="good">${candidate.simulation_size_label} · ${candidate.observation_intensity}</p>
       ${smallList(candidate.why_ranked)}
     </article>
@@ -106,6 +107,34 @@ function render(data) {
   document.querySelector("#allowed-claims").innerHTML = list(data.monetization.allowed_claims);
   document.querySelector("#prohibited-claims").innerHTML = list(data.monetization.prohibited_claims);
   document.querySelector("#offer-ideas").innerHTML = list(data.monetization.offer_ideas);
+  document.querySelector("#pricing-grid").innerHTML = data.monetization.pricing_plans.map((plan) => `
+    <article class="panel pricing-card">
+      <div class="panel-title">
+        <h3>${plan.name}</h3>
+        <strong>${plan.price_label}</strong>
+      </div>
+      <p>${plan.summary}</p>
+      <ul class="claim-list">${list(plan.features)}</ul>
+      <small>${plan.disclaimer}</small>
+    </article>
+  `).join("");
+  document.querySelector("#faq-grid").innerHTML = data.monetization.faq.map((item) => `
+    <article class="panel faq-card">
+      <h3>${item.question}</h3>
+      <p>${item.answer}</p>
+    </article>
+  `).join("");
+  document.querySelector("#removed-claims").innerHTML = list(data.monetization.removed_risky_claims);
+  document.querySelector("#risk-mitigation-grid").innerHTML = data.risk_mitigation.map((item) => `
+    <article class="panel risk-card">
+      <div class="panel-title">
+        <h3>${item.title}</h3>
+        <strong>${item.status}</strong>
+      </div>
+      <p>${item.risk}</p>
+      <small>${item.response}</small>
+    </article>
+  `).join("");
 }
 
 loadDemoData()

@@ -9,23 +9,32 @@
   </head>
   <body>
     <main class="public-shell">
+      <section class="simulation-banner">
+        <strong>Simulation only. No real funds are used. Results are hypothetical and not investment advice.</strong>
+        <p>외부 계좌 연결은 없으며, AI는 후보를 권유하지 않고 시나리오를 요약하고 위험과 가정을 설명합니다.</p>
+      </section>
       <section class="hero">
         <div class="eyebrow">페이퍼 시뮬레이션 리서치 전용</div>
-        <h1>미국주식 후보를 리스크 먼저 검증하는 공개 시뮬레이션 대시보드.</h1>
+        <h1>미국주식 시나리오를 안전하게 비교하고 기록하는 페이퍼 리서치 도구.</h1>
         <p class="hero-copy">
-          이 공개 페이지는 후보 랭킹, 모의 노출 계획, 검증 지표, 안전성 점검, 수익화 가능한 리서치 포지셔닝을
-          일반 사용자도 이해하기 쉽게 보여줍니다. 실제 자금 운용, 외부 계좌 연결, 실제 자금 액션, 성과 약속은 포함하지 않습니다.
+          후보를 사라고 말하는 화면이 아닙니다. AI가 시나리오를 요약하고, 가정을 비교하고, 위험을 먼저 보여주며,
+          페이퍼 기록과 모델 검증 리포트를 정리하는 연구 대시보드입니다. 실제 자금 사용, 외부 계좌 연결,
+          성과 약속은 포함하지 않습니다.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#candidates">시뮬레이션 후보 보기</a>
+          <a class="button secondary" href="#pricing">도구 접근 옵션 보기</a>
+          <a class="button secondary" href="#risk-plan">리스크 대처 방안</a>
           <a class="button secondary" href="#evidence">검증 증빙 확인</a>
           <a class="button secondary" href="#safety">안전 원칙 보기</a>
           <a class="button secondary" href="./review.html">GPT 검수용 진행 현황</a>
+          <a class="button secondary" href="./safety.html">최종 안전 감사</a>
         </div>
         <div class="pill-row">
           <span class="pill safe">페이퍼 전용 잠금</span>
           <span class="pill">외부 계좌 연결 없음</span>
-          <span class="pill">실제 자금 액션 없음</span>
+          <span class="pill">실제 자금 사용 없음</span>
+          <span class="pill">결과는 가정 기반</span>
           <span class="pill">성과 약속 없음</span>
         </div>
       </section>
@@ -36,12 +45,40 @@
           <strong id="release-status" class="good">불러오는 중</strong>
         </div>
         <div class="summary-grid" id="summary-grid"></div>
+        <article class="panel risk-disclosure">
+          <h3>리스크 고지</h3>
+          <p>위 지표는 페이퍼 시뮬레이션 기록만 사용합니다. 실제 자금은 사용하지 않으며, 실제 시장 결과와 다를 수 있고 투자 조언이 아닙니다.</p>
+        </article>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="panel-title">
+          <h2>도구 접근 옵션</h2>
+          <strong>성과 약속이 아닌 기능 접근권</strong>
+        </div>
+        <p class="muted">
+          아래 옵션은 리서치 도구, 데이터 보기, 시뮬레이션 용량, 리포트 기능의 접근 범위를 설명합니다.
+          어떤 옵션도 실제 시장 결과를 예측하거나 더 나은 결과를 약속하지 않습니다.
+        </p>
+        <div class="pricing-grid" id="pricing-grid"></div>
+      </section>
+
+      <section class="section" id="risk-plan">
+        <div class="panel-title">
+          <h2>리스크 대처 방안</h2>
+          <strong>공개 전후 운영 원칙</strong>
+        </div>
+        <p class="muted">
+          이 공개 데모는 투자 판단을 대신하지 않습니다. 아래 항목은 데이터 지연, 작은 표본, 과최적화,
+          보안, 과장 해석을 줄이기 위한 운영 체크리스트입니다.
+        </p>
+        <div class="risk-grid" id="risk-mitigation-grid"></div>
       </section>
 
       <section class="section" id="candidates">
         <div class="panel-title">
           <h2>랭킹된 페이퍼 후보</h2>
-          <strong>모의 노출이며 실제 자금 액션이 아닙니다</strong>
+          <strong>모의 노출이며 실제 자금을 사용하지 않습니다</strong>
         </div>
         <div class="rank-grid" id="rank-grid"></div>
         <div class="panel">
@@ -95,7 +132,7 @@
 
       <section class="section" id="safety">
         <div class="panel-title">
-          <h2>안전한 수익화 포지셔닝</h2>
+          <h2>안전한 서비스화 포지셔닝</h2>
           <strong>성과 약속 없음</strong>
         </div>
         <div class="proof-grid">
@@ -109,13 +146,25 @@
           </article>
         </div>
         <article class="panel">
-          <h3>수익화 아이디어</h3>
+          <h3>서비스화 아이디어</h3>
           <ul class="claim-list" id="offer-ideas"></ul>
+        </article>
+        <article class="panel">
+          <h3>제거한 위험 문구 유형</h3>
+          <ul class="claim-list" id="removed-claims"></ul>
         </article>
       </section>
 
+      <section class="section" id="faq">
+        <div class="panel-title">
+          <h2>자주 묻는 질문</h2>
+          <strong>보수적 설명</strong>
+        </div>
+        <div class="faq-grid" id="faq-grid"></div>
+      </section>
+
       <footer class="footer">
-        페이퍼 시뮬레이션 리서치 공개 데모입니다. 실계좌 연결, 실제 자금 액션, 성과 약속은 제공하지 않습니다.
+        페이퍼 시뮬레이션 리서치 공개 데모입니다. 외부 계좌 연결, 실제 자금 사용, 성과 약속은 제공하지 않습니다.
       </footer>
     </main>
     <script src="./assets/public.js"></script>

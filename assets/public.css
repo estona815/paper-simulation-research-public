@@ -38,6 +38,25 @@ a {
   border-bottom: 1px solid rgba(148, 163, 184, 0.14);
 }
 
+.simulation-banner {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: rgba(31, 157, 114, 0.14);
+  border: 1px solid rgba(95, 214, 176, 0.32);
+}
+
+.simulation-banner strong {
+  color: #dff7ef;
+}
+
+.simulation-banner p {
+  margin: 0;
+  color: #b7c9d7;
+}
+
 .hero.compact {
   min-height: 52vh;
 }
@@ -154,7 +173,10 @@ p {
 .summary-grid,
 .rank-grid,
 .evidence-grid,
-.proof-grid {
+.proof-grid,
+.pricing-grid,
+.faq-grid,
+.risk-grid {
   display: grid;
   gap: 12px;
 }
@@ -175,11 +197,42 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.faq-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.risk-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .metric-card,
 .rank-card {
   padding: 16px;
   display: grid;
   gap: 10px;
+}
+
+.pricing-card,
+.faq-card,
+.risk-card {
+  display: grid;
+  gap: 10px;
+}
+
+.pricing-card strong {
+  color: #8ff0c1;
+  font-size: 22px;
+}
+
+.pricing-card small,
+.faq-card small,
+.risk-card small {
+  color: #9bacbf;
+  line-height: 1.5;
 }
 
 .metric-card strong {
@@ -239,6 +292,11 @@ p {
   color: #ffaaa5;
 }
 
+.risk-disclosure {
+  border-color: rgba(232, 168, 75, 0.26);
+  background: rgba(232, 168, 75, 0.08);
+}
+
 .table-wrap {
   width: 100%;
   overflow: auto;
@@ -296,7 +354,10 @@ td small {
   .summary-grid,
   .rank-grid,
   .evidence-grid,
-  .proof-grid {
+  .proof-grid,
+  .pricing-grid,
+  .faq-grid,
+  .risk-grid {
     grid-template-columns: 1fr;
   }
 

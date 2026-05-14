@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="페이퍼 시뮬레이션 리서치 대시보드 최종 안전 감사 요약." />
+    <title>최종 안전 감사 | 페이퍼 시뮬레이션 리서치</title>
+    <link rel="stylesheet" href="./assets/public.css" />
+  </head>
+  <body>
+    <main class="public-shell">
+      <section class="simulation-banner">
+        <strong>Simulation only. No real funds are used. Results are hypothetical and not investment advice.</strong>
+        <p>이 공개 페이지는 리서치 데모이며 외부 계좌 연결, 실제 자금 사용, 성과 약속을 제공하지 않습니다.</p>
+      </section>
+
+      <section class="hero compact">
+        <div class="eyebrow">최종 안전 감사</div>
+        <h1>공개 전 안전 감사 결과: PASS</h1>
+        <p class="hero-copy">
+          이 프로젝트는 미국주식 페이퍼 시뮬레이션 리서치 대시보드로 검수되었습니다.
+          결과는 가정 기반이며 실제 시장 결과와 다를 수 있고 투자 조언이 아닙니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="./index.html">공개 데모로 돌아가기</a>
+          <a class="button secondary" href="./review.html">GPT 검수용 진행 현황</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>핵심 점검 결과</h2>
+          <strong>PASS</strong>
+        </div>
+        <div class="proof-grid">
+          <article class="panel">
+            <h3>공개 기능 범위</h3>
+            <ul class="claim-list">
+              <li>정적 공개 페이지 전용</li>
+              <li>외부 계좌 연결 없음</li>
+              <li>실제 자금 사용 없음</li>
+              <li>리서치와 검증 자료 중심</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>문구와 해석</h3>
+            <ul class="claim-list">
+              <li>성과 약속 없음</li>
+              <li>개인화된 투자 조언 아님</li>
+              <li>AI는 시나리오와 리스크를 요약</li>
+              <li>모든 결과는 가정 기반</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>데이터와 보안</h3>
+            <ul class="claim-list">
+              <li>공개 demo JSON만 사용</li>
+              <li>frontend credential 노출 없음</li>
+              <li>서버와 DB 없이 표시 가능</li>
+              <li>데이터 지연과 결측 가능성 표시</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>검증 명령</h3>
+            <ul class="claim-list">
+              <li>Compliance lint: PASS</li>
+              <li>Backend tests: 44 passed</li>
+              <li>Frontend typecheck/build: PASS</li>
+              <li>Public page safety audit: PASS</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>남은 리스크 대처</h2>
+          <strong>운영 체크리스트</strong>
+        </div>
+        <div class="risk-grid">
+          <article class="panel risk-card">
+            <h3>데이터 품질</h3>
+            <p>공개 데이터는 지연되거나 제한될 수 있습니다.</p>
+            <small>데이터 신뢰도와 생성 시각을 함께 표시하고, 낮은 신뢰도는 보수적으로 해석합니다.</small>
+          </article>
+          <article class="panel risk-card">
+            <h3>표본과 편향</h3>
+            <p>작은 표본은 모델 품질을 과대평가하게 만들 수 있습니다.</p>
+            <small>표본 등급, 선택 편향, 과최적화 위험을 함께 표시합니다.</small>
+          </article>
+          <article class="panel risk-card">
+            <h3>공개 배포</h3>
+            <p>정적 공개 파일만 공유합니다.</p>
+            <small>backend, DB, provider credential, 내부 설정은 공개 artifact에 포함하지 않습니다.</small>
+          </article>
+          <article class="panel risk-card">
+            <h3>사용자 오해</h3>
+            <p>랭킹은 투자 판단이 아니라 검토용 시나리오입니다.</p>
+            <small>상단 고지와 FAQ에서 가정 기반 결과, 투자 조언 아님, 실제 자금 미사용을 반복 표시합니다.</small>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        최종 안전 감사 요약입니다. 이 프로젝트는 페이퍼 시뮬레이션 리서치 전용이며 투자 조언이나 성과 약속을 제공하지 않습니다.
+      </footer>
+    </main>
+  </body>
+</html>
