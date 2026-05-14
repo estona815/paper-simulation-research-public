@@ -61,7 +61,7 @@ function render(data) {
   document.querySelector("#release-score").textContent = String(data.release_readiness.release_readiness_score);
   document.querySelector("#summary-grid").innerHTML = [
     metric("페이퍼 누적수익률", `${data.validation.paper_total_return_pct.toFixed(2)}%`),
-    metric("승률", `${data.validation.win_rate_pct.toFixed(2)}%`),
+    metric("긍정 결과 비율", `${data.validation.win_rate_pct.toFixed(2)}%`),
     metric("최대 낙폭", `${data.validation.max_drawdown.toFixed(2)}`, "negative"),
     metric("표본 등급", sampleGradeLabels[data.validation.sample_grade] ?? data.validation.sample_grade, "watch"),
     metric("점수 보정", calibrationLabels[data.validation.calibration_readiness] ?? data.validation.calibration_readiness, "watch"),

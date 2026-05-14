@@ -9,9 +9,9 @@
 
 ## 1. 프로젝트 목적
 
-이 프로젝트는 미국주식 후보를 실거래가 아니라 페이퍼 트레이딩 / 시뮬레이션 기준으로 랭킹하고, 후보 선정 이유와 하방 위험, 시장 국면, 데이터 신뢰도, 검증 지표를 함께 보여주는 리스크 우선 리서치 대시보드입니다.
+이 프로젝트는 미국주식 후보를 실제 자금 운용이 아니라 페이퍼 시뮬레이션 기준으로 랭킹하고, 후보 선정 이유와 하방 위험, 시장 국면, 데이터 신뢰도, 검증 지표를 함께 보여주는 리스크 우선 리서치 대시보드입니다.
 
-목표는 수익 보장이 아니라 다음을 검증하는 것입니다.
+목표는 성과 약속이 아니라 다음을 검증하는 것입니다.
 
 - 어떤 후보가 왜 랭킹되었는가
 - 랭킹이 실제 페이퍼 평가에서 일관성이 있는가
@@ -21,20 +21,20 @@
 
 ## 2. 절대 안전 원칙
 
-이 프로젝트는 실거래 자동매매 시스템이 아닙니다.
+이 프로젝트는 실제 자금 운용 자동화 시스템이 아닙니다.
 
 절대 만들면 안 되는 것:
 
-- 실제 Buy 버튼
-- 실제 Sell 버튼
-- 실제 Trade 버튼
-- Execute / Order / Place Order 버튼
+- 방향성 실제 자금 액션 버튼
+- 방향성 실제 자금 액션 버튼
+- 실제 Record 버튼
+- Run / Action / Place Action 버튼
 - 실계좌 연결
-- live broker endpoint
-- 실제 주문 실행
-- 자동매매 실행
-- broker API key 하드코딩
-- 수익 보장, 확정 수익, 무위험 수익 문구
+- 외부 계좌 액션 endpoint
+- 실제 자금 액션
+- 자동 실제 자금 운용 갱신
+- Provider credential 하드코딩
+- 성과 약속, 확정 성과, 무위험 성과 문구
 
 허용되는 것:
 
@@ -59,14 +59,14 @@
 - candidate snapshots 저장
 - daily report generator
 - 2~3 day evaluation mode 확장
-- win rate, average return, median return, volatility, max drawdown, risk-adjusted return 등 평가 지표
+- positive outcome rate, average return, median return, volatility, max drawdown, risk-adjusted return 등 평가 지표
 - hit rate by rank, rank decay, rule performance, validation quality 구조
-- recommendation / risk / research / trade result explainer
+- recommendation / risk / research / record result explainer
 - read-only 중심 dashboard / scanner / ticker / journal / report / evaluation / settings API
-- Paper Trading Only Lock API
+- Paper Simulation Only Lock API
 - public API safety audit
-- 실거래형 route 제거 또는 차단
-- paper broker adapter는 실제 fill 요청을 거부하도록 잠금
+- 실제 자금 운용형 route 제거 또는 차단
+- paper external account adapter는 실제 fill 요청을 거부하도록 잠금
 
 ## 4. 현재 구현된 프론트엔드
 
@@ -89,7 +89,7 @@
 - settings safety audit
 - mock fallback data
 - no-build preview HTML
-- 실거래처럼 보이는 버튼과 문구 제거
+- 실제 자금 운용처럼 보이는 버튼과 문구 제거
 
 ## 5. 공개 웹 구현
 
@@ -112,8 +112,8 @@
 - 안전 점검 결과
 - 수익화 가능 포지셔닝
 - GPT 검수용 진행 현황
-- 백엔드, DB, API 키, broker 연결 없음
-- 실거래 주문 실행 없음
+- 백엔드, DB, Provider credential, 외부 계좌 연결 없음
+- 실제 자금 액션 없음
 
 ## 6. 검증 결과
 
@@ -124,13 +124,13 @@
 - 공개 review.html 응답: 200 OK
 - 공개 JSON 파싱: json_ok
 - GitHub Pages status: built
-- API 키 노출 스캔: 실제 키 없음
+- Provider credential 노출 스캔: 실제 키 없음
 - DB 파일: .gitignore로 제외
 - node_modules: .gitignore로 제외
 - .env: .gitignore로 제외
-- 공개 페이지에 Buy / Sell / Trade / Execute / Order 버튼 없음
-- 공개 페이지에 broker 연결 없음
-- 공개 페이지에 수익 보장 문구 없음
+- 공개 페이지에 방향성 액션 버튼 없음
+- 공개 페이지에 외부 계좌 연결 없음
+- 공개 페이지에 성과 약속 문구 없음
 
 ## 7. 남은 리스크와 한계
 
@@ -145,16 +145,16 @@
 
 아래 관점으로 검수해 주세요.
 
-1. 이 프로젝트가 실거래 자동매매처럼 보이는 표현이나 기능을 포함하는가?
-2. Buy / Sell / Trade / Execute / Order / broker / live trading 관련 위험 표현이 남아 있는가?
-3. 수익 보장, 무위험 수익, 확정 수익처럼 오해될 수 있는 문구가 있는가?
-4. paper trading / simulation / mock / evaluation 전용이라는 점이 충분히 명확한가?
+1. 이 프로젝트가 실제 자금 운용 자동화처럼 보이는 표현이나 기능을 포함하는가?
+2. 방향성 액션 / external account / real-money mode 관련 위험 표현이 남아 있는가?
+3. 성과 약속, 무위험 성과, 확정 성과처럼 오해될 수 있는 문구가 있는가?
+4. paper simulation / mock / evaluation 전용이라는 점이 충분히 명확한가?
 5. 일반 사용자가 이해하기 쉬운 한국어 UX인가?
 6. 리스크, 표본 부족, 편향, 과최적화 위험을 충분히 드러내는가?
-7. 공개 웹에 올려도 민감 정보나 실제 주문 기능 노출 문제가 없는가?
+7. 공개 웹에 올려도 민감 정보나 실제 자금 액션 기능 노출 문제가 없는가?
 
 ## 9. 결론
 
-현재 상태는 실거래 자동매매 봇이 아니라, 미국주식 후보를 리스크 우선으로 검증하는 공개 가능한 페이퍼 시뮬레이션 리서치 대시보드입니다.
+현재 상태는 실제 자금 운용 자동화 봇이 아니라, 미국주식 후보를 리스크 우선으로 검증하는 공개 가능한 페이퍼 시뮬레이션 리서치 대시보드입니다.
 
 다만 실제 성과를 주장하려면 장기간의 페이퍼 검증 기록, 충분한 표본 수, walk-forward 평가, 편향 통제, 반복 가능한 리포트가 더 필요합니다.
