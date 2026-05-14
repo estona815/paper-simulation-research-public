@@ -1,5 +1,12 @@
 # GPT 검수용 진행 현황
 
+## 0. 공개 위치
+
+- 공개 웹: https://estona815.github.io/paper-simulation-research-public/
+- 공개 GitHub 저장소: https://github.com/estona815/paper-simulation-research-public
+- 공개 방식: GitHub Pages, branch `main`, path `/`
+- 공개 저장소에는 정적 웹 파일과 검수용 문서만 포함됩니다.
+
 ## 1. 프로젝트 목적
 
 이 프로젝트는 미국주식 후보를 실거래가 아니라 페이퍼 트레이딩 / 시뮬레이션 기준으로 랭킹하고, 후보 선정 이유와 하방 위험, 시장 국면, 데이터 신뢰도, 검증 지표를 함께 보여주는 리스크 우선 리서치 대시보드입니다.
@@ -114,7 +121,9 @@
 
 - Backend pytest: 23 passed
 - 공개 HTML 응답: 200 OK
+- 공개 review.html 응답: 200 OK
 - 공개 JSON 파싱: json_ok
+- GitHub Pages status: built
 - API 키 노출 스캔: 실제 키 없음
 - DB 파일: .gitignore로 제외
 - node_modules: .gitignore로 제외
