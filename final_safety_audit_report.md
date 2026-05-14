@@ -85,12 +85,6 @@ Safety summary:
 https://estona815.github.io/paper-simulation-research-public/safety.html
 ```
 
-Published commit:
-
-```text
-26c19d8
-```
-
 Verified public page contains the persistent simulation notice, tool access section, risk response section, FAQ, and final safety summary link.
 
 ## Files Changed During This Audit
