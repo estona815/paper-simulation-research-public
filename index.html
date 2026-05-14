@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="미국주식 페이퍼 트레이딩 전용 리스크 우선 시뮬레이션 리서치 대시보드." />
+    <title>페이퍼 시뮬레이션 리서치 대시보드</title>
+    <link rel="stylesheet" href="./assets/public.css" />
+  </head>
+  <body>
+    <main class="public-shell">
+      <section class="hero">
+        <div class="eyebrow">페이퍼 트레이딩 / 시뮬레이션 리서치 전용</div>
+        <h1>미국주식 후보를 리스크 먼저 검증하는 공개 시뮬레이션 대시보드.</h1>
+        <p class="hero-copy">
+          이 공개 페이지는 후보 랭킹, 모의 노출 계획, 검증 지표, 안전성 점검, 수익화 가능한 리서치 포지셔닝을
+          일반 사용자도 이해하기 쉽게 보여줍니다. 실거래, 증권사 연결, 주문 실행, 수익 보장은 포함하지 않습니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#candidates">시뮬레이션 후보 보기</a>
+          <a class="button secondary" href="#evidence">검증 증빙 확인</a>
+          <a class="button secondary" href="#safety">안전 원칙 보기</a>
+          <a class="button secondary" href="./review.html">GPT 검수용 진행 현황</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill safe">페이퍼 전용 잠금</span>
+          <span class="pill">증권사 연결 없음</span>
+          <span class="pill">주문 실행 없음</span>
+          <span class="pill">수익 보장 없음</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <span id="generated">생성 시각 확인 중</span>
+          <strong id="release-status" class="good">불러오는 중</strong>
+        </div>
+        <div class="summary-grid" id="summary-grid"></div>
+      </section>
+
+      <section class="section" id="candidates">
+        <div class="panel-title">
+          <h2>랭킹된 페이퍼 후보</h2>
+          <strong>모의 노출이며 주문이 아닙니다</strong>
+        </div>
+        <div class="rank-grid" id="rank-grid"></div>
+        <div class="panel">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>순위</th>
+                  <th>종목</th>
+                  <th>종합</th>
+                  <th>위험</th>
+                  <th>신뢰도</th>
+                  <th>모의 노출</th>
+                  <th>상태</th>
+                </tr>
+              </thead>
+              <tbody id="candidate-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="evidence">
+        <div class="panel-title">
+          <h2>신뢰 증빙</h2>
+          <strong>안전 점수 <span id="release-score">0</span></strong>
+        </div>
+        <div class="evidence-grid">
+          <article class="panel">
+            <h3>공개 전 안전 점검</h3>
+            <p>
+              이 점검은 공개 페이지가 페이퍼 시뮬레이션 리서치 제품으로 유지되는지, 실거래형 실행 기능이 없는지 확인합니다.
+            </p>
+            <div class="small-list" id="audit-checks"></div>
+          </article>
+          <article class="panel">
+            <h3>검증 결과 해석</h3>
+            <p>
+              현재 공개 증빙은 안전 구조와 검증 방식을 보여주기 위한 자료입니다. 미래 성과를 증명하지 않습니다.
+              성과를 해석하기 전에는 표본 수, 선택 편향, 과최적화 위험을 항상 함께 확인해야 합니다.
+            </p>
+            <ul class="claim-list">
+              <li>시뮬레이션 증빙 전용</li>
+              <li>수동 검토용 점수 보정 제안</li>
+              <li>리스크 우선 모의 노출 제한</li>
+              <li>페이퍼 저널 학습 루프</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="safety">
+        <div class="panel-title">
+          <h2>안전한 수익화 포지셔닝</h2>
+          <strong>성과 약속 없음</strong>
+        </div>
+        <div class="proof-grid">
+          <article class="panel">
+            <h3>허용 가능한 표현</h3>
+            <ul class="claim-list" id="allowed-claims"></ul>
+          </article>
+          <article class="panel">
+            <h3>금지 표현</h3>
+            <ul class="claim-list" id="prohibited-claims"></ul>
+          </article>
+        </div>
+        <article class="panel">
+          <h3>수익화 아이디어</h3>
+          <ul class="claim-list" id="offer-ideas"></ul>
+        </article>
+      </section>
+
+      <footer class="footer">
+        페이퍼 트레이딩 / 시뮬레이션 리서치 공개 데모입니다. 실계좌 연결, 주문 실행, 수익 보장은 제공하지 않습니다.
+      </footer>
+    </main>
+    <script src="./assets/public.js"></script>
+  </body>
+</html>

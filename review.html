@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="페이퍼 시뮬레이션 리서치 대시보드 GPT 검수용 진행 현황." />
+    <title>GPT 검수용 진행 현황</title>
+    <link rel="stylesheet" href="./assets/public.css" />
+  </head>
+  <body>
+    <main class="public-shell">
+      <section class="hero compact">
+        <div class="eyebrow">GPT Review Packet</div>
+        <h1>페이퍼 시뮬레이션 리서치 대시보드 진행 현황.</h1>
+        <p class="hero-copy">
+          이 문서는 외부 GPT나 사람 검수자가 프로젝트의 목적, 공개 범위, 안전 원칙, 구현 기능,
+          테스트 결과, 남은 리스크를 빠르게 확인할 수 있도록 만든 공개용 검수 자료입니다.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="./index.html">공개 대시보드로 돌아가기</a>
+          <a class="button secondary" href="./gpt_review_packet.md">복사용 Markdown 보기</a>
+        </div>
+        <div class="pill-row">
+          <span class="pill safe">실거래 기능 없음</span>
+          <span class="pill">증권사 연결 없음</span>
+          <span class="pill">주문 실행 없음</span>
+          <span class="pill">수익 보장 없음</span>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>한 줄 요약</h2>
+          <strong>공개 검수용</strong>
+        </div>
+        <article class="panel">
+          <p>
+            이 프로젝트는 미국주식 후보를 실거래가 아니라 페이퍼 트레이딩 / 시뮬레이션 기준으로 랭킹하고,
+            후보 선정 이유와 하방 위험, 시장 국면, 데이터 신뢰도, 검증 지표를 함께 보여주는 리스크 우선
+            리서치 대시보드입니다.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>최우선 안전 원칙</h2>
+          <strong>절대 위반 금지</strong>
+        </div>
+        <div class="proof-grid">
+          <article class="panel">
+            <h3>허용 범위</h3>
+            <ul class="claim-list">
+              <li>페이퍼 후보 랭킹</li>
+              <li>시뮬레이션 관찰 기록</li>
+              <li>모의 노출 계획</li>
+              <li>시장 국면 기반 신뢰도 표시</li>
+              <li>점수 보정 제안과 검증 리포트</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>금지 범위</h3>
+            <ul class="claim-list">
+              <li>실제 Buy / Sell / Trade / Execute / Order 버튼</li>
+              <li>실계좌 연결 또는 live broker endpoint</li>
+              <li>자동 주문 실행 또는 주문 라우팅</li>
+              <li>API 키 하드코딩</li>
+              <li>수익 보장, 무위험 수익, 확정 수익 표현</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>구현된 핵심 기능</h2>
+          <strong>2026-05-14 기준</strong>
+        </div>
+        <div class="evidence-grid">
+          <article class="panel">
+            <h3>백엔드</h3>
+            <ul class="claim-list">
+              <li>FastAPI + SQLite 기반 read-only 중심 API</li>
+              <li>스캐너 / 랭킹 엔진과 balanced scoring profile</li>
+              <li>downside risk score, market regime overlay, research score provider stub</li>
+              <li>candidate snapshots 저장과 daily / evaluation / evidence report 생성</li>
+              <li>win rate, average return, median return, volatility, max drawdown, risk-adjusted return 등 평가 지표</li>
+              <li>Paper Trading Only Lock 및 공개 API 안전 감사</li>
+            </ul>
+          </article>
+          <article class="panel">
+            <h3>프론트엔드 / 공개 웹</h3>
+            <ul class="claim-list">
+              <li>React 기반 내부 대시보드 구조</li>
+              <li>공개용 GitHub Pages 정적 웹 분리</li>
+              <li>한국어 공개 페이지, 랭킹 카드, 검증 지표, 안전 점검 표시</li>
+              <li>실거래처럼 보이는 버튼과 문구 제거</li>
+              <li>공개 배포물은 HTML, CSS, JS, 데모 JSON, 검수 문서만 포함</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>검증 결과</h2>
+          <strong>최근 확인</strong>
+        </div>
+        <div class="summary-grid">
+          <article class="metric-card"><span>Backend pytest</span><strong class="good">23 passed</strong></article>
+          <article class="metric-card"><span>공개 HTML</span><strong class="good">200 OK</strong></article>
+          <article class="metric-card"><span>공개 JSON</span><strong class="good">json_ok</strong></article>
+          <article class="metric-card"><span>API 키 노출</span><strong class="good">없음</strong></article>
+          <article class="metric-card"><span>실거래 버튼</span><strong class="good">없음</strong></article>
+          <article class="metric-card"><span>DB 공개</span><strong class="good">차단</strong></article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>남은 리스크</h2>
+          <strong>과장 금지</strong>
+        </div>
+        <article class="panel">
+          <ul class="claim-list">
+            <li>현재 공개 후보 데이터는 데모이며 실제 성과 우위를 증명하지 않습니다.</li>
+            <li>성과 지표는 표본 수가 부족하면 해석하면 안 됩니다.</li>
+            <li>선택 편향, lookahead bias, 과최적화 위험을 계속 점검해야 합니다.</li>
+            <li>프론트엔드 정식 Vite build는 로컬 Node/Rollup 환경 문제로 별도 확인이 필요합니다.</li>
+            <li>공개 웹은 정적 사이트로 유지하고, 백엔드 서버와 DB는 인터넷에 직접 노출하지 않는 것이 안전합니다.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="panel-title">
+          <h2>GPT 검수 요청</h2>
+          <strong>복사용</strong>
+        </div>
+        <article class="panel">
+          <pre class="copy-block">이 프로젝트가 실거래 자동매매처럼 보이지 않는지 검수해줘.
+특히 Buy/Sell/Trade/Execute/Order, broker 연결, 주문 실행, API 키 노출, 수익 보장 문구가 없는지 확인해줘.
+또한 paper trading / simulation research dashboard로서 일반 사용자가 이해하기 쉬운지,
+리스크와 한계가 충분히 드러나는지, 수익화 문구가 과장되지 않았는지 검토해줘.</pre>
+        </article>
+      </section>
+
+      <footer class="footer">
+        공개 검수 자료입니다. 이 프로젝트는 페이퍼 트레이딩 / 시뮬레이션 리서치 전용이며 투자 자문이나 실거래 실행 도구가 아닙니다.
+      </footer>
+    </main>
+  </body>
+</html>

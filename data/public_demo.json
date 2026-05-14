@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-05-14T04:33:45Z",
+  "paper_only_notice": "페이퍼 트레이딩 / 시뮬레이션 리서치 전용 공개 데모입니다. 수익 보장이 아니며 실제 주문 실행 기능을 포함하지 않습니다.",
+  "release_readiness": {
+    "overall_status": "READY_FOR_PAPER_SIMULATION",
+    "release_readiness_score": 100,
+    "blocked_routes_detected": 0,
+    "unexpected_write_routes": 0,
+    "checks": [
+      {
+        "label": "페이퍼 전용 잠금",
+        "status": "PASS",
+        "detail": "공개 화면은 시뮬레이션 전용이며 사용자가 실거래 모드로 바꿀 수 없습니다."
+      },
+      {
+        "label": "실행형 공개 경로 차단",
+        "status": "PASS",
+        "detail": "공개 검수 기준에서 주문, 증권사 연결, 실거래, 실행형 경로가 노출되지 않습니다."
+      },
+      {
+        "label": "쓰기 기능 범위 제한",
+        "status": "PASS",
+        "detail": "비공개 앱의 기록 기능도 스캐너 스냅샷과 시뮬레이션 리포트 중심으로 제한됩니다."
+      },
+      {
+        "label": "페이퍼 기록 용어 사용",
+        "status": "PASS",
+        "detail": "저널과 증빙 자료는 실거래 표현 대신 페이퍼 기록, 관찰, 검증 표현을 사용합니다."
+      }
+    ]
+  },
+  "validation": {
+    "period": "2026-05-01 ~ 2026-05-14",
+    "paper_total_return_pct": 0,
+    "win_rate_pct": 0,
+    "average_return_pct": 0,
+    "median_return_pct": 0,
+    "volatility": 0,
+    "max_drawdown": 0,
+    "loss_avoidance_score": 0,
+    "sample_grade": "insufficient",
+    "paper_records": 0,
+    "calibration_readiness": "not_ready",
+    "overfitting_risk": "MEDIUM",
+    "lookahead_risk": "LOW",
+    "selection_bias_risk": "HIGH",
+    "interpretation": "현재 공개 데이터는 안전 구조와 검증 프레임워크를 보여주기 위한 예시입니다. 아직 우위가 있다고 주장할 만큼 충분한 증거는 아닙니다."
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "sector": "기술",
+      "total_score": 90.47,
+      "downside_risk_score": 0,
+      "data_confidence_score": 76,
+      "market_regime_compatibility": 72,
+      "recommendation_label": "페이퍼 검증 후보",
+      "mock_allocation_pct": 4,
+      "mock_risk_budget_pct": 0.35,
+      "observation_intensity": "표준 관찰",
+      "simulation_size_label": "표준 모의 노출",
+      "why_ranked": [
+        "상대 거래량이 강하게 확인됨",
+        "VWAP 위에서 흐름 유지",
+        "1분/5분/15분 추세가 정렬됨"
+      ],
+      "downside_risks": [
+        "장 초반 과열 이후 되돌림 위험",
+        "VWAP 이탈 시 페이퍼 관찰 무효화 필요"
+      ]
+    },
+    {
+      "rank": 2,
+      "ticker": "AMD",
+      "company_name": "Advanced Micro Devices",
+      "sector": "반도체",
+      "total_score": 84.55,
+      "downside_risk_score": 10,
+      "data_confidence_score": 76,
+      "market_regime_compatibility": 72,
+      "recommendation_label": "페이퍼 검증 후보",
+      "mock_allocation_pct": 3,
+      "mock_risk_budget_pct": 0.35,
+      "observation_intensity": "표준 관찰",
+      "simulation_size_label": "표준 모의 노출",
+      "why_ranked": [
+        "상대 거래량이 강하게 확인됨",
+        "VWAP 위에서 흐름 유지",
+        "시장 국면 적합도를 추적 중"
+      ],
+      "downside_risks": [
+        "갭 리스크 재확인 필요",
+        "데이터 신뢰도가 기준 아래로 떨어지면 관찰 강도 축소"
+      ]
+    },
+    {
+      "rank": 3,
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corp.",
+      "sector": "기술",
+      "total_score": 69.45,
+      "downside_risk_score": 10,
+      "data_confidence_score": 76,
+      "market_regime_compatibility": 72,
+      "recommendation_label": "관찰 전용",
+      "mock_allocation_pct": 1,
+      "mock_risk_budget_pct": 0.12,
+      "observation_intensity": "관찰만",
+      "simulation_size_label": "소규모 관찰",
+      "why_ranked": [
+        "후보권 점수 범위 안에 머무름",
+        "리스크 우선 제한으로 모의 노출을 축소"
+      ],
+      "downside_risks": [
+        "검증 기준보다 점수가 낮음",
+        "더 강한 근거가 나오기 전까지 기록 중심으로만 관찰"
+      ]
+    }
+  ],
+  "monetization": {
+    "positioning": "미국주식 후보를 랭킹하고, 왜 후보로 올라왔는지 설명하며, 하방 위험과 검증 품질을 함께 추적하는 리스크 우선 페이퍼 시뮬레이션 대시보드입니다.",
+    "allowed_claims": [
+      "페이퍼 전용 후보 랭킹",
+      "리스크 우선 시뮬레이션 증빙",
+      "시장 국면과 데이터 신뢰도 맥락 제공",
+      "수동 검토용 점수 보정 제안",
+      "성과 해석 전 표본 수와 편향 경고 제공"
+    ],
+    "prohibited_claims": [
+      "수익 보장",
+      "무위험 수익",
+      "자동 실거래",
+      "매수/매도 지시",
+      "증권사 주문 실행"
+    ],
+    "offer_ideas": [
+      "비공개 리서치 대시보드 구독",
+      "주간 페이퍼 시뮬레이션 증빙 리포트",
+      "명확한 고지문이 포함된 리스크 우선 관심종목 뉴스레터",
+      "랭킹, 저널링, 검증 습관을 보여주는 교육 상품"
+    ]
+  }
+}
