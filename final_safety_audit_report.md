@@ -71,6 +71,28 @@ PATH="/Users/hantaeheuk/.cache/codex-runtimes/codex-primary-runtime/dependencies
 
 Result: PASS
 
+## Public Deployment Verification
+
+Public URL:
+
+```text
+https://estona815.github.io/paper-simulation-research-public/
+```
+
+Safety summary:
+
+```text
+https://estona815.github.io/paper-simulation-research-public/safety.html
+```
+
+Published commit:
+
+```text
+26c19d8
+```
+
+Verified public page contains the persistent simulation notice, tool access section, risk response section, FAQ, and final safety summary link.
+
 ## Files Changed During This Audit
 
 - `backend/app/services/simulation_engine.py`
